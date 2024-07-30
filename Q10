@@ -1,0 +1,20 @@
+
+
+def has_zero_sum_subarray(lst):
+    prefix_sum = 0
+    prefix_sums_seen = set()
+    
+    for num in lst:
+        prefix_sum += num
+        
+        
+        if prefix_sum == 0:
+            return True
+        
+        if prefix_sum in prefix_sums_seen:
+            return True
+        
+    
+        prefix_sums_seen.add(prefix_sum)
+    
+    return False
